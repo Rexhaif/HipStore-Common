@@ -1,4 +1,4 @@
-package io.hiplabs.hipstore.api.dataformat.sublayers;
+package io.hiplabs.hipstore.api.storage;
 
 import io.hiplabs.hipstore.api.system.Layer;
 
