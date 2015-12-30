@@ -11,6 +11,11 @@ import io.hiplabs.hipstore.api.system.Result;
  */
 public interface StorageLayer extends Layer{
 
+    /**
+     * Associate specified cache layer with this storage
+     * @param layer cache layer
+     */
+    void attachCacheLayer(CacheLayer layer);
 
     /**
      * Inserts record into storage
