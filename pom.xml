@@ -6,8 +6,49 @@
 
     <groupId>io.hiplabs</groupId>
     <artifactId>hipstore-common</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <packaging>jar</packaging>
+
+    <name>Hipstore API Specification</name>
+    <description>
+        Hipstore is flexible storage system for different network protocols, apis, dataformats and storage backends.
+        This is an API specification and utils for it.
+    </description>
+    <url>https://github.com/Rexhaif/HipStore-Common</url>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+    <developers>
+        <developer>
+            <name>Daniil Larionov</name>
+            <id>Rexhaif</id>
+            <email>rexhaif.io@gmail.com</email>
+            <url>https://github.com/Rexhaif</url>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-rexhaif-maven</id>
+            <name>Rexhaif-maven</name>
+            <url>https://api.bintray.com/maven/rexhaif/maven/hipstore-commons/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:Rexhaif/HipStore-Common.git</connection>
+        <developerConnection>scm:git:git@github.com:Rexhaif/HipStore-Common.git</developerConnection>
+        <url>https://github.com/Rexhaif/HipStore-Common.git</url>
+    </scm>
 
     <licenses>
         <license>
@@ -49,6 +90,12 @@
             <version>${logback.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20151123</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
@@ -64,6 +111,32 @@
                     <source>${project.java.version}</source>
                     <target>${project.java.version}</target>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
