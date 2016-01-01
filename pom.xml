@@ -16,17 +16,6 @@
     </description>
     <url>https://github.com/Rexhaif/HipStore-Common</url>
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
     <developers>
         <developer>
             <name>Daniil Larionov</name>
@@ -35,14 +24,6 @@
             <url>https://github.com/Rexhaif</url>
         </developer>
     </developers>
-
-    <distributionManagement>
-        <repository>
-            <id>bintray-rexhaif-maven</id>
-            <name>Rexhaif-maven</name>
-            <url>https://api.bintray.com/maven/rexhaif/maven/hipstore-commons/;publish=1</url>
-        </repository>
-    </distributionManagement>
 
     <scm>
         <connection>scm:git:git@github.com:Rexhaif/HipStore-Common.git</connection>
@@ -151,6 +132,22 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
             </plugin>
 
         </plugins>
