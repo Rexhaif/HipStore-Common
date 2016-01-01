@@ -23,16 +23,16 @@ public class LayerContextImpl<T> implements LayerContext<T> {
 
     @Override
     public T config() {
-        return null;
+        return config;
     }
 
     @Override
     public MetricRegistry metrics() {
-        return null;
+        return metrics;
     }
 
     @Override
     public Logger logger() {
-        return null;
+        return logger;
     }
 }
