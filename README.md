@@ -1,3 +1,3 @@
 # HipStore-Common
-Common classes for HipStore
-### --- Under Development --- ###
+HipStore API Specification
+### Use for creating custom implementations ###
