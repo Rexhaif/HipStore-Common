@@ -8,6 +8,14 @@ public class Result<T> {
     private T result;
     private Throwable cause;
 
+    public static Result EMPTY_SUCCESS_RESULT() {
+        return new Result<>(new Object(), null);
+    }
+
+    public static Result FAILED_RESULT(Throwable caused) {
+        return new Result(null, caused);
+    }
+
     /**
      * Create new result instance
      * @param result result of operation, should be null if operation was failed

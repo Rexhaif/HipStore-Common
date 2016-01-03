@@ -11,11 +11,11 @@ public interface Layer {
      * @param context context for service
      */
 
-    Result<Void> initAndStart(LayerContext context);
+    Result initAndStart(LayerContext context);
 
     /**
      * Stopping service
      */
-    Result<Void> stop();
+    Result stop();
 
 }
