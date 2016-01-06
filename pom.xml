@@ -6,7 +6,7 @@
 
     <groupId>io.hiplabs</groupId>
     <artifactId>hipstore-common</artifactId>
-    <version>0.2.3</version>
+    <version>0.2.4</version>
     <packaging>jar</packaging>
 
     <name>Hipstore API Specification</name>

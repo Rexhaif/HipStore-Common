@@ -1,6 +1,7 @@
 package io.hiplabs.hipstore.api.dataformat;
 
 import io.hiplabs.hipstore.api.dataformat.sublayers.TempStorageLayer;
+import io.hiplabs.hipstore.api.request.Request;
 import io.hiplabs.hipstore.api.storage.StorageLayer;
 import io.hiplabs.hipstore.api.system.Layer;
 import io.hiplabs.hipstore.api.system.Result;
@@ -27,6 +28,6 @@ public interface DataFormatLayer extends Layer {
      * @param request request instance
      * @return result of processing
      */
-    Result processRequest(Object request);
+    Result processRequest(Request request);
 
 }
