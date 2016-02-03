@@ -1,5 +1,6 @@
 package io.hiplabs.hipstore.api.dataformat;
 
+import io.hiplabs.hipstore.api.request.Request;
 import io.hiplabs.hipstore.api.system.Result;
 
 /**
@@ -13,6 +14,6 @@ public interface RequestProcessor {
      * @param request specified-class request instance
      * @return result of processing
      */
-    Result process(Object request);
+    Result process(Request request);
 
 }

@@ -1,6 +1,7 @@
 package io.hiplabs.hipstore.api.dataformat;
 
 import io.hiplabs.hipstore.api.dataformat.sublayers.TempStorageLayer;
+import io.hiplabs.hipstore.api.request.Request;
 import io.hiplabs.hipstore.api.storage.StorageLayer;
 import io.hiplabs.hipstore.api.system.LayerContext;
 import io.hiplabs.hipstore.api.system.Result;
@@ -10,11 +11,11 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Simple way to process different request
+ * Simple way to process different requests
  */
 public abstract class AbstractFilteredDataFormatLayer implements DataFormatLayer {
 
-    private Map<Class, RequestProcessor> processingRules = new HashMap<>();
+    private Map<Class<? extends Request>, RequestProcessor> processingRules = new HashMap<>();
 
     @Override
     public abstract void attachTempStorageLayer(TempStorageLayer layer);
@@ -27,14 +28,14 @@ public abstract class AbstractFilteredDataFormatLayer implements DataFormatLayer
      * @param requestClass class of request
      * @param processor request processor
      */
-    protected void addProcessingRule(Class requestClass, RequestProcessor processor){
+    protected void addProcessingRule(Class<? extends Request> requestClass, RequestProcessor processor){
         processingRules.put(requestClass, processor);
     }
 
     @Override
-    public Result processRequest(Object request) {
+    public Result processRequest(Request request) {
         Result result = null;
-        for (Class clazz : processingRules.keySet()) {
+        for (Class<? extends Request> clazz : processingRules.keySet()) {
             if (clazz.isInstance(request)) {
                 result = processingRules.get(clazz).process(request);
             }
